@@ -15,6 +15,6 @@ def home(request):
     plugins.sort(key=lambda x: x.identifier())
 
     if working:
-        return HttpResponse(loader.render_to_string("templates/health_check/dashboard.html", {'plugins': plugins}))
+        return HttpResponse(loader.render_to_string("health_check/dashboard.html", {'plugins': plugins}))
     else:
-        return HttpResponseServerError(loader.render_to_string("templates/health_check/dashboard.html", {'plugins': plugins}))
+        return HttpResponseServerError(loader.render_to_string("health_check/dashboard.html", {'plugins': plugins}))
